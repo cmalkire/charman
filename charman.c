@@ -7,7 +7,8 @@ This program will hold an arbitrary amount of character for DnD (pathfinder syst
 
 #include <iostream>
 #include <fstream>
-
+#include <iomanip>
+#include <cctype>
 using namespace std;
 
 //Character Information Class [These are all things that are just intrinsic to the character, and should be cross-version, and are all decided by the player]
@@ -27,15 +28,20 @@ class char_info {
 //Function Definitions [This is what each of the functions in char_info will perform]
 
 void char_info::create_char() {
-	int x=0;
+	int x=0, y=0, z=0;
 	system("cls");
 	cout<<"New character creation menu, please follow the directions to setup your new character:\n";
+
+	//This while loop will edit a charachter's basic data.
 	while (x == 0) {
 		cout<<"Please enter their name: ";
 		cin.getline(name,50);
 		system("cls");
 		cout<<"Please enter their race: ";
 		cin>>race;
+		system("cls")
+		cout<<"Please enter their alignment: ";
+		cin.getline(alignment,20);
 		system("cls")
 		cout<<"Please enter their gender: ";
 		cin>>gender;
@@ -50,10 +56,59 @@ void char_info::create_char() {
 		system("cls");
 		cout<<"Please enter their hair color: ";
 		cin>>hair;
-		system("cls")
-		cout<<"Please enter their alignment: ";
-		cin.getline(alignment,20);
 		system("cls");
+		cout<<"Please enter their eye color: ";
+		cin>>eyes;
+		system("cls");
+
+		//This while loop sets all the numerical attributes for the charachter
+		while (y == 0) {
+			cout<<"Please enter their attributes\n";
+
+			if(z == 0){
+				cout<<"STR: ";
+				cin>>Str;
+				system("cls");
+				z=1;
+			}
+
+			else if(z == 1){
+				cout<<"DEX: ";
+				cin>>Dex;
+				system("cls");
+				z=2;
+			}
+
+			else if(z ==2 ){
+				cout<<"CON: ";
+				cin>>Con;
+				system("cls");
+				z=3;
+
+			}
+
+			else if(z == 3){
+				cout<<"INT: ";
+				cin>>Int;
+				system("cls");
+				z=4;
+			}
+
+			else if(z == 4){
+				cout<<"WIS: ";
+				cin>>Wis;
+				system("cls");
+				z=5;
+			}
+
+			else if(z == 5){
+				cout<<"CHA: ";
+				cin>>Cha;
+				system("cls");
+				y=1;
+			}
+		}
+	}
  }
 
 int main() 
