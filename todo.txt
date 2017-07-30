@@ -5,7 +5,8 @@ Character manager to-do list
 3. Decide which attibutes need to go where (maybe inherited classes aren't that useful here)
 4. Ways to equip/unequip items?
 5. Race menues and presets?
-6. Might have to impliment functions in the char_info class
+6. Might have to impliment functions in the char_info class.
+7. Basic level up information, don't worry about AC or anything else, just things that change for each class.
 
 Notes:
 
