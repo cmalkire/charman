@@ -1,0 +1,10 @@
+Character manager to-do list
+
+1. Reveiw classes and inherited classes to make sure that the attributes for the individual characters will work right.
+2. Add in external file functionality, a way to possibly add feats + descriptions?
+3. Decide which attibutes need to go where
+
+Notes:
+
+-Keep in mind that we're starting in pathfinder, it's a harder numerical system anyhow
+-Files are going to be important, if this is going to be used as a utility, it should be able to create either its own directories, or will need some present to work properly
