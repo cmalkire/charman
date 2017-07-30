@@ -2,7 +2,10 @@ Character manager to-do list
 
 1. Reveiw classes and inherited classes to make sure that the attributes for the individual characters will work right.
 2. Add in external file functionality, a way to possibly add feats + descriptions?
-3. Decide which attibutes need to go where
+3. Decide which attibutes need to go where (maybe inherited classes aren't that useful here)
+4. Ways to equip/unequip items?
+5. Race menues and presets?
+6. Might have to impliment functions in the char_info class
 
 Notes:
 

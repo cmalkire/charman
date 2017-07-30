@@ -10,19 +10,20 @@ This program will hold an arbitrary amount of character for DnD (pathfinder syst
 
 using namespace std;
 
-//Base Class [These are all things that are just intrinsic to the character, and should be cross-version]
+//Character Information Class [These are all things that are just intrinsic to the character, and should be cross-version, and are all decided by the player]
 class char_info {
 
  public:
-	char name[50], age[5], hair[10], eyes[10], deity[10];
-	int gametype_var, hft, hin, weight; //Note: hft stands for height-ft and hin stands for height-in
+	char name[50], age[5], hair[10], eyes[10], deity[10], alignment[20], gender[10];
+	int gametype_var, hft, hin, weight, size_var; //Note: hft stands for height-ft and hin stands for height-in
+	int Str, Dex, Con, Int, Wis, Cha; //Stats
 
  private:
 
 };
 
-//Attribute Class [These are more numerical things, such as Stats, movement, etc...] (Pathfinder)
-class attr_path: public char_info {
+//Character Attribute Class [These are things that are likely racial, and will need to be altered based on race and class] (Pathfinder)
+class char_attr {
 
 };
 
