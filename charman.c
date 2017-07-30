@@ -8,7 +8,7 @@ This program will hold an arbitrary amount of character for DnD (pathfinder syst
 #include <iostream>
 #include <fstream>
 
-using namespace.std;
+using namespace std;
 
 //Base Class [These are all things that are just intrinsic to the character, and should be cross-version]
 class char_info {
@@ -19,14 +19,16 @@ class char_info {
 
  private:
 
-}
+};
 
 //Attribute Class [These are more numerical things, such as Stats, movement, etc...] (Pathfinder)
 class attr_path: public char_info {
 
-}
+};
 
 int main()
 {
-
+	cout<<"Welcome to cmalkire's Dungeons & Dragons Character manager!\nPress Enter to begin...";
+	cin.get();
+	cout<<"I'm sorry, this program isn't exactly ready yet, and you're not able to view all the neat features that I'm going to put in. I'll print a changelog in future updates.\nFor now, sit tight! and check back later!\n";
 }
