@@ -15,7 +15,7 @@ using namespace std;
 
 //Character Information Class [These are all things that are just intrinsic to the character, and should be cross-version, and are all decided by the player]
 class char_info {
-	char name[50], hair[10], eyes[10], deity[10], alignment[20], gender[10], race[10]; //Basic Character information, really only a few of these will be referenced
+	char name[50], hair[10], eyes[10], diety[10], alignment[20], gender[10], race[10]; //Basic Character information, really only a few of these will be referenced
 	int gametype_var, hft, hin, weight, size_var, age; //Note: hft stands for height-ft and hin stands for height-in
 	int Str, Dex, Con, Int, Wis, Cha; //Stats
  //This will hold all the functions that will alter character data
@@ -40,7 +40,8 @@ void char_info::create_char() {
 	//This while loop will edit a charachter's basic data.
 	while (x == 2) {
 		cout<<"Please enter their name: ";
-		cin.getline(name,20,'\n');
+		cin.ignore();
+		cin.getline(name,20);
 		system("clear");
 		cout<<"Please enter their race: ";
 		cin>>race;
@@ -65,6 +66,8 @@ void char_info::create_char() {
 		cout<<"Please enter their eye color: ";
 		cin>>eyes;
 		system("clear");
+		cout<<"Please enter their deity: ";
+		cin>>diety
 
 		//This while loop sets all the numerical attributes for the charachter
 		while (y == 0){
