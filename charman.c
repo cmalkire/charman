@@ -30,14 +30,17 @@ class char_info {
 //Function Definitions [This is what each of the functions in char_info will perform]
 
 void char_info::create_char() {
-	int x=0, y=0, z=0;
+	int x, y, z;
+	x=2;
+	y=0;
+	z=0;
 	system("clear");
 	cout<<"New character creation menu, please follow the directions to setup your new character:\n";
 
 	//This while loop will edit a charachter's basic data.
-	while (x == 0) {
+	while (x == 2) {
 		cout<<"Please enter their name: ";
-		cin.getline(name,50);
+		cin.getline(name,20,'\n');
 		system("clear");
 		cout<<"Please enter their race: ";
 		cin>>race;
@@ -64,7 +67,7 @@ void char_info::create_char() {
 		system("clear");
 
 		//This while loop sets all the numerical attributes for the charachter
-		do {
+		while (y == 0){
 			cout<<"Please enter their attributes\n";
 
 			if(z == 0){
@@ -107,10 +110,17 @@ void char_info::create_char() {
 				cout<<"CHA: ";
 				cin>>Cha;
 				system("clear");
+				z=0;
 				y=1;
 			}
-		} while (y == 0);
-		x=1; 
+		} 
+		y=0;
+		cout<<"Here are your charachter's details, please make sure they are correct (you will be able to change it later).\n";
+		cout<<"Name: "<<name<<"\nRace: "<<race<<"\nGender: "<<gender<<"\nAge: "<<age<<"\nAlignmennt: "<<alignment<<"\nHair Color: "<<hair<<"\nEye Color: "<<eyes<<"\nHeight: "<<hft<<"ft "<<hin<<"in\n";
+		cout<<"STR: "<<Str<<"\nDEX: "<<Dex<<"\nCON: "<<Con<<"\nINT: "<<Int<<"\nWIS: "<<Wis<<"\nCHA: "<<Cha<<endl;
+		cout<<"\n Do these look correct? If not, select 'NO' and you will be allowed to try again.\n";
+		cout<<"1-YES\n2-NO\n";
+		cin>>x;
 	}
  }
 
