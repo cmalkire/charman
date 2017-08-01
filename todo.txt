@@ -12,3 +12,6 @@ Notes:
 
 -Keep in mind that we're starting in pathfinder, it's a harder numerical system anyhow
 -Files are going to be important, if this is going to be used as a utility, it should be able to create either its own directories, or will need some present to work properly
+-Remember that the compile command is very 
+different on android, and for testing purposes 
+there needs to be two different versions
