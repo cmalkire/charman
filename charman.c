@@ -67,7 +67,7 @@ void char_info::create_char() {
 		cin>>eyes;
 		system("clear");
 		cout<<"Please enter their deity: ";
-		cin>>diety
+		cin>>diety;
 
 		//This while loop sets all the numerical attributes for the charachter
 		while (y == 0){

@@ -7,6 +7,7 @@ Character manager to-do list
 5. Race menues and presets?
 6. Might have to impliment functions in the char_info class.
 7. Basic level up information, don't worry about AC or anything else, just things that change for each class.
+8. Fix int locking error, perhaps a little bit of error correction code?
 
 Notes:
 
