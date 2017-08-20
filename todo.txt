@@ -7,12 +7,11 @@ Character manager to-do list
 5. Race menues and presets?
 6. Might have to impliment functions in the char_info class.
 7. Basic level up information, don't worry about AC or anything else, just things that change for each class.
-8. Fix int locking error, perhaps a little bit of error correction code?
+8. Impliment main menu, and selection of option (this is kinda a big deal, because that's where a lot of functionality can be gained/lost)
+9. Figure out data system, maybe how to specifically name files?
 
 Notes:
 
 -Keep in mind that we're starting in pathfinder, it's a harder numerical system anyhow
 -Files are going to be important, if this is going to be used as a utility, it should be able to create either its own directories, or will need some present to work properly
--Remember that the compile command is very 
-different on android, and for testing purposes 
-there needs to be two different versions
+-Remember that the compile command is very different on android, and for testing purposes there needs to be two different versions

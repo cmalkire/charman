@@ -10,16 +10,20 @@ This program will hold an arbitrary amount of character for DnD (pathfinder syst
 #include <iomanip>
 #include <cctype>
 #include <stdlib.h>
+#include <string>
 
 using namespace std;
 
 //Character Information Class [These are all things that are just intrinsic to the character, and should be cross-version, and are all decided by the player]
 class char_info {
-	char name[50], hair[10], eyes[10], diety[10], alignment[20], gender[10], race[10]; //Basic Character information, really only a few of these will be referenced
+
+	char /*name[50],*/ hair[10], eyes[10], diety[20], alignment[20], gender[10], race[10]; //Basic Character information, really only a few of these will be referenced
 	int gametype_var, hft, hin, weight, size_var, age; //Note: hft stands for height-ft and hin stands for height-in
 	int Str, Dex, Con, Int, Wis, Cha; //Stats
  //This will hold all the functions that will alter character data
  public:
+
+	char name[50];
 	void create_char();
 	void alter_char();
 	void level_char();
@@ -40,13 +44,13 @@ void char_info::create_char() {
 	//This while loop will edit a charachter's basic data.
 	while (x == 2) {
 		cout<<"Please enter their name: ";
-		cin.ignore();
-		cin.getline(name,20);
+		cin.getline(name,50);
 		system("clear");
 		cout<<"Please enter their race: ";
 		cin>>race;
 		system("clear");
 		cout<<"Please enter their alignment: ";
+		cin.ignore();
 		cin.getline(alignment,20);
 		system("clear");
 		cout<<"Please enter their gender: ";
@@ -67,7 +71,9 @@ void char_info::create_char() {
 		cin>>eyes;
 		system("clear");
 		cout<<"Please enter their deity: ";
-		cin>>diety;
+		cin.ignore();
+		cin.getline(diety,20);
+		system("clear");
 
 		//This while loop sets all the numerical attributes for the charachter
 		while (y == 0){
@@ -116,22 +122,41 @@ void char_info::create_char() {
 				z=0;
 				y=1;
 			}
-		} 
+		}
 		y=0;
 		cout<<"Here are your charachter's details, please make sure they are correct (you will be able to change it later).\n";
-		cout<<"Name: "<<name<<"\nRace: "<<race<<"\nGender: "<<gender<<"\nAge: "<<age<<"\nAlignmennt: "<<alignment<<"\nHair Color: "<<hair<<"\nEye Color: "<<eyes<<"\nHeight: "<<hft<<"ft "<<hin<<"in\n";
+		cout<<"Name: "<<name<<"\nRace: "<<race<<"\nGender: "<<gender<<"\nAge: "<<age<<"\nAlignmennt: "<<alignment<<"\nHair Color: "<<hair<<"\nEye Color: "<<eyes<<"\nHeight: "<<hft<<"ft "<<hin<<"in\nDiety: "<<diety<<"\n";
 		cout<<"STR: "<<Str<<"\nDEX: "<<Dex<<"\nCON: "<<Con<<"\nINT: "<<Int<<"\nWIS: "<<Wis<<"\nCHA: "<<Cha<<endl;
 		cout<<"\n Do these look correct? If not, select 'NO' and you will be allowed to try again.\n";
 		cout<<"1-YES\n2-NO\n";
 		cin>>x;
+		cin.ignore();
+		system("clear");
+
 	}
  }
 
-int main() 
+//Define functions to be used later
+void write_char();
+int main()
 {
-	char_info new_char;
+	//Work with class definitions in functions in the future, that way multiple classes can be defined
 	cout<<"Welcome to cmalkire's Character Manager!\nPress Enter to continue...\n";
 	cin.get();
-	new_char.create_char();
+	write_char();
 	cout<<"This program will help manage characters in the pathfinder system. At the moment, there's nothing here. Sorry about that.\n";
+}
+
+
+//External functions go here, as a note, write your class calls here, and not in main
+void write_char()
+{
+	char filename;
+	char_info char_n;
+	char_n.create_char();
+	filename = char_info::name;
+	ofstream outFile;
+	outFile.open(filename,ios::binary|ios::app);
+	outFile.write(reinterpret_cast<char *> (&char_n), sizeof(char_info));
+	outFile.close();
 }
